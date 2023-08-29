@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as cartActions from "../../redux/actions/CartAction"
 import { bindActionCreators } from "redux";
 import alertify from "alertifyjs"
+import { Link } from "react-router-dom";
 
 import { Table, Button } from "reactstrap";
 class CartDetail extends Component {
@@ -42,7 +43,12 @@ class CartDetail extends Component {
             ))}
           </tbody>
         </Table>
+        <Link to="/delivery">
+      <button className= "bg-red-500 px-6 py-3 text-white poppins rounded-full  focus:outline-none focus:ring-4 transform transition duration-700 hover:scale-105">Satın Al</button>
+      </Link>
       </div>
+
+     
     );
   }
 }

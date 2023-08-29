@@ -44,6 +44,10 @@ const Navbar = () => {
                 <div className="flex items-center justify-end space-x-6">
                     <ul>
                     <li><Link to="/">Home</Link></li>
+
+                    </ul>
+                    <ul>
+                    <li><Link to="/Order">Order</Link></li>
                     </ul>
                     <div className="ml-auto">
                         <button onClick={toggleCart} className="relative">
