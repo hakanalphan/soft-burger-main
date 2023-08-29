@@ -12,6 +12,15 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
 
     const { cartItems } = useSelector((state) => state.cart);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+
+    const toggleCart = () => {
+        setIsCartOpen(!isCartOpen);
+    };
+
+    const closeCart = () => {
+        setIsCartOpen(false);
+    };
 
 
     const [changeHeader, setChangeHeader] = useState(false)
@@ -36,9 +45,15 @@ const Navbar = () => {
                     <ul>
                     <li><Link to="/">Home</Link></li>
                     </ul>
-               {cartItems.length>0&&<CartSummary/>} 
+                    <div className="ml-auto">
+                        <button onClick={toggleCart} className="relative">
+                            <BsCart2 size={30} />
+                            {cartItems.length > 0 && <span className="bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center absolute -top-1 -right-2">{cartItems.length}</span>}
+                        </button>
+                        {isCartOpen && <CartSummary onClose={closeCart} />}
+                    </div>
                     <Link to="/signin">
-                    <button className="poppins text-black" >Sign In</button>
+                    <button className= "bg-red-500 px-6 py-3 text-white poppins rounded-full  focus:outline-none focus:ring-4 transform transition duration-700 hover:scale-105">Sign In</button>
                     </Link>
 
                     <Link to="/signup">

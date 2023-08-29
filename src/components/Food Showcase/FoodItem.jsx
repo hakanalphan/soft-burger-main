@@ -12,8 +12,12 @@ const FoodItem = (props) => {
   const [products, setProducts] = useState([]);
 
   const addToCartHandler = (product) => {
-    dispatch(cartActions.addToCart(product));
-    alertify.success(product.productName + " sepete eklendi");
+    if (product && product.productName) {
+      dispatch(cartActions.addToCart(product));
+      alertify.success(product.productName + " sepete eklendi");
+    } else {
+      console.error("Ürün bilgileri eksik veya geçersiz.");
+    }
   };
 
   useEffect(() => {

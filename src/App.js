@@ -11,14 +11,14 @@ import LayoutWithoutNavbar from './components/LayoutWithoutNavbar';
 
 function App() {
   return (
-    <Router>
-      <Routes> {/* Routes kullanımı */}
-        <Route path="/signin" element={<LayoutWithoutNavbar><SignIn /></LayoutWithoutNavbar>} />
-        <Route path="/signup" element={<LayoutWithoutNavbar><SignUp /></LayoutWithoutNavbar>} />
-        <Route path="/" element={<LayoutWithNavbar><HomeScreen /></LayoutWithNavbar>} />
-        {/* Diğer rotalar */}
-      </Routes>
-    </Router>
+    
+    <Routes>
+    <Route path="/signin" element={<LayoutWithoutNavbar><SignIn /></LayoutWithoutNavbar>} />
+    <Route path="/signup" element={<LayoutWithoutNavbar><SignUp /></LayoutWithoutNavbar>} />
+    <Route path="/" element={<LayoutWithNavbar><HomeScreen /></LayoutWithNavbar>} />
+    {/* Diğer rotalar */}
+  </Routes>
+   
   );
 }
 
